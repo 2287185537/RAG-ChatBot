@@ -1,0 +1,25 @@
+A. Next.js 15（App Router、Route Handlers、Turbopack）
+B. React 19
+C. TypeScript 5
+D. Tailwind CSS 4
+E. Vercel AI SDK（ai, @ai-sdk/react, @ai-sdk/google）
+F. Google Gemini 2.5 Flash（模型）
+G. Pinecone（@pinecone-database/pinecone）
+H. Pinecone Inference Embed：multilingual-e5-large
+I. Pinecone Rerank：bge-reranker-v2-m3
+J. LangChain（@langchain/community, @langchain/core）
+K. WebPDFLoader（PDF 文档加载）
+L. pdf-parse（PDF 解析备选）
+M. react-dropzone（拖拽上传）
+N. axios（HTTP 请求）
+O. @tanstack/react-query（数据请求与缓存）
+P. PostgreSQL（数据库）
+Q. drizzle-orm（ORM）
+R. drizzle-kit（迁移工具）
+S. postgres（Node 驱动）
+T. dotenv（环境变量）
+U. ts-md5（内容指纹）
+V. lucide-react（图标）
+W. ESLint 9（代码质量）
+X. Vercel（部署平台）
+Y. Supabase（PostgreSQL 托管平台）

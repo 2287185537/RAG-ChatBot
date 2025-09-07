@@ -1,26 +1,219 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+  /* 学术风格浅色主题 - 温和的蓝灰色调 */
+  --background: oklch(0.98 0.01 240);
+  --foreground: oklch(0.2 0.02 240);
+  --card: oklch(0.99 0.005 240);
+  --card-foreground: oklch(0.25 0.02 240);
+  --popover: oklch(0.99 0.005 240);
+  --popover-foreground: oklch(0.25 0.02 240);
+  --primary: oklch(0.45 0.15 240); /* 学术蓝色 */
+  --primary-foreground: oklch(0.98 0.01 240);
+  --secondary: oklch(0.95 0.01 240);
+  --secondary-foreground: oklch(0.3 0.02 240);
+  --muted: oklch(0.94 0.01 240);
+  --muted-foreground: oklch(0.5 0.02 240);
+  --accent: oklch(0.6 0.12 200); /* 学术青色 */
+  --accent-foreground: oklch(0.98 0.01 240);
+  --destructive: oklch(0.6 0.2 20);
+  --border: oklch(0.9 0.01 240);
+  --input: oklch(0.92 0.01 240);
+  --ring: oklch(0.45 0.15 240);
+  --chart-1: oklch(0.6 0.15 240);
+  --chart-2: oklch(0.65 0.12 200);
+  --chart-3: oklch(0.55 0.1 280);
+  --chart-4: oklch(0.7 0.14 160);
+  --chart-5: oklch(0.58 0.16 320);
+  --sidebar: oklch(0.97 0.01 240);
+  --sidebar-foreground: oklch(0.25 0.02 240);
+  --sidebar-primary: oklch(0.45 0.15 240);
+  --sidebar-primary-foreground: oklch(0.98 0.01 240);
+  --sidebar-accent: oklch(0.95 0.01 240);
+  --sidebar-accent-foreground: oklch(0.3 0.02 240);
+  --sidebar-border: oklch(0.9 0.01 240);
+  --sidebar-ring: oklch(0.45 0.15 240);
+}
+
+.dark {
+  /* 学术风格深色主题 - 深邃的蓝灰色调 */
+  --background: oklch(0.08 0.02 240);
+  --foreground: oklch(0.95 0.01 240);
+  --card: oklch(0.12 0.02 240);
+  --card-foreground: oklch(0.92 0.01 240);
+  --popover: oklch(0.12 0.02 240);
+  --popover-foreground: oklch(0.92 0.01 240);
+  --primary: oklch(0.65 0.15 240); /* 明亮的学术蓝 */
+  --primary-foreground: oklch(0.08 0.02 240);
+  --secondary: oklch(0.15 0.02 240);
+  --secondary-foreground: oklch(0.9 0.01 240);
+  --muted: oklch(0.18 0.02 240);
+  --muted-foreground: oklch(0.65 0.01 240);
+  --accent: oklch(0.7 0.12 200); /* 明亮的学术青 */
+  --accent-foreground: oklch(0.08 0.02 240);
+  --destructive: oklch(0.7 0.2 20);
+  --border: oklch(0.22 0.02 240);
+  --input: oklch(0.18 0.02 240);
+  --ring: oklch(0.65 0.15 240);
+  --chart-1: oklch(0.65 0.15 240);
+  --chart-2: oklch(0.7 0.12 200);
+  --chart-3: oklch(0.6 0.1 280);
+  --chart-4: oklch(0.75 0.14 160);
+  --chart-5: oklch(0.63 0.16 320);
+  --sidebar: oklch(0.1 0.02 240);
+  --sidebar-foreground: oklch(0.92 0.01 240);
+  --sidebar-primary: oklch(0.65 0.15 240);
+  --sidebar-primary-foreground: oklch(0.08 0.02 240);
+  --sidebar-accent: oklch(0.15 0.02 240);
+  --sidebar-accent-foreground: oklch(0.9 0.01 240);
+  --sidebar-border: oklch(0.22 0.02 240);
+  --sidebar-ring: oklch(0.65 0.15 240);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* 全局磨砂背景效果 */
+    background-image: 
+      radial-gradient(circle at 25% 25%, oklch(0.45 0.15 240 / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, oklch(0.6 0.12 200 / 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* 磨砂玻璃效果工具类 */
+@layer utilities {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px) saturate(140%);
+    -webkit-backdrop-filter: blur(8px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+  
+  .academic-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.98 0.01 240) 0%,
+      oklch(0.96 0.015 220) 50%,
+      oklch(0.94 0.02 200) 100%
+    );
+  }
+  
+  .dark .academic-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.08 0.02 240) 0%,
+      oklch(0.1 0.025 220) 50%,
+      oklch(0.12 0.03 200) 100%
+    );
+  }
+  
+  .text-gradient-academic {
+    background: linear-gradient(
+      135deg,
+      oklch(0.45 0.15 240),
+      oklch(0.6 0.12 200)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  
+  .academic-border {
+    border-image: linear-gradient(
+      135deg,
+      oklch(0.45 0.15 240 / 0.3),
+      oklch(0.6 0.12 200 / 0.3)
+    ) 1;
+  }
+  
+  .scrollbar-academic {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.45 0.15 240 / 0.3) transparent;
+  }
+  
+  .scrollbar-academic::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-academic::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-academic::-webkit-scrollbar-thumb {
+    background: oklch(0.45 0.15 240 / 0.3);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-academic::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.45 0.15 240 / 0.5);
+  }
 }

@@ -6,22 +6,46 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gen:recall": "tsx scripts/gen_recall_questions.ts"
   },
   "dependencies": {
+    "@ai-sdk/google": "^2.0.11",
+    "@ai-sdk/react": "^2.0.28",
+    "@langchain/community": "^0.3.53",
+    "@langchain/core": "^0.3.72",
+    "@pinecone-database/pinecone": "^6.1.2",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tanstack/react-query": "^5.85.6",
+    "ai": "^5.0.28",
+    "axios": "^1.11.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.2.1",
+    "drizzle-orm": "^0.44.5",
+    "langchain": "^0.3.31",
+    "lucide-react": "^0.542.0",
+    "next": "15.5.2",
+    "pdf-parse": "^1.1.1",
+    "postgres": "^3.4.7",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.2"
+    "react-dropzone": "^14.3.8",
+    "tailwind-merge": "^3.3.1",
+    "ts-md5": "^2.0.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "drizzle-kit": "^0.31.4",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "tsx": "^4.20.5",
+    "tw-animate-css": "^1.3.7",
+    "typescript": "^5"
   }
 }
